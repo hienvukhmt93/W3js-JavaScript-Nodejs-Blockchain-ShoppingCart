@@ -145,11 +145,14 @@ router.get('/detail/:id', function(req, res, next) {
 });
 
 
-router.get('/search', function(req, res, next) {
-    var keyWord = req.body.keyWord;
-
-    
-})
+router.get('/search/:id', function(req, res, next) {
+    var id = req.params.id;  
+    console.log(id);
+    Product.find({ $or: [ {'name': {$regex: id, $options: 'i'}}, { 'prices': parseInt(id) || null }]}, function(err, docs) {
+      console.log(docs);
+       res.render('shop/index-search', { param: docs });
+      });
+});
 
 
 

@@ -1,0 +1,61 @@
+
+{{#if products}}
+            <div class="container">
+                        <h1 style="color: rgba(0, 132, 255, 0.459)">Pay - now</h1>
+            </div>
+
+            <div class="alert alert-danger">
+                    <p id="hashError"></p>
+            </div>
+        <div class="container">
+  <h2>List buy</h2>
+  <div>
+      <button type="button" onclick="removeAll();">Remove All</button>
+  </div>   
+  <table id="myTable" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Prices</th>
+        <th>Total</th>
+        <th>Number Buy</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {{#each products}}
+        <tr>      
+            <td id="_id{{@index}}">{{this.id}}</td>
+            <td id="name{{@index}}">{{this.name}}</td>
+            <td id="prices{{@index}}">{{this.prices}}</td>
+            <td id="totalNumber{{@index}}">{{this.number}}</td>
+            <td><input type="number" name="numberBuy"  id="numberBuy{{@index}}" onchange="myFunction();"   value="1" class="form-control"></td>
+            <td><button type="button" onclick="delete_byOne('{{this.id}}');" >Delete</button></td>
+            <input type="hidden" name="description" id="description{{@index}}" value="{{this.description}}">
+            <input type="hidden" name="hashCode" id="hashCode{{@index}}" value="{{this.hashCode}}">
+
+        </tr>
+        {{/each}}
+
+    </tbody>
+  </table>
+</div>
+           <input type="hidden" id="max_arr" value="{{max_arr}}">
+            <div class="form-group">
+                <label for="text">TotalPrice</label>
+                <input type="number" id="totalPrices" value="{{totalPrices}}" readonly   name="totalPrices"  class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="hidden" id="address" name="address" value="{{address.address}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Private Key</label>
+                <input type="password" id="privateKey" name="privateKey" class="form-control">
+            </div>
+ <button type="button" onclick="pay_cart();"  >Buy</button>
+{{else}}
+    <h1>No Items</h1>
+{{/if}}
+<script src="/javascripts/pay-cart.js"></script>

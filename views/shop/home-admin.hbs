@@ -1,0 +1,48 @@
+        <h2><a href="/admin/direct-add-item/">Add new Items Click Here</a></h2>
+            <div >
+                    <p id="hashError"></p>
+            </div>
+{{#if data}}
+    <div class="container">
+        <h1>Manger-Home</h1>
+    </div>
+  <table id="myTable" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Prices</th>
+        <th>Description</th>
+        <th>Number</th>
+        {{!-- <th>Detail</th> --}}
+        <th>IMG</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {{#each data}}
+        <tr>
+            <td id="_id{{@index}}">{{this._id}}</td>      
+            <td id="_id{{@index}}">{{this.name}}</td>
+            <td id="name{{@index}}">{{this.prices}}</td>
+            <td id="prices{{@index}}">{{this.description}}</td>
+            <td id="totalNumber{{@index}}">{{this.number}}</td>
+            <td hidden id="description{{@index}}">{{this.detail}}</td>
+            <td id="img{{@index}}"><img height="50" width="50" src="https://ipfs.io/ipfs/{{this.hashCode}}" alt="Not Found">
+            </td> 
+            <td><button type="button" onclick="edit('{{this._id}}');">Edit</button></td>
+
+        </tr>
+        {{/each}}
+
+    </tbody>
+  </table>
+{{else}}
+    <div class="container">
+      <h1>Manger No Items</h1>
+
+    </div>
+{{/if}}
+
+<script src="/javascripts/edit-items-admin.js"></script>

@@ -1,0 +1,23 @@
+
+
+<div class="row">
+{{#each param}}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://ipfs.io/ipfs/{{this.hashCode}}" alt="Not Found">
+      <div class="caption">
+        <h3 class="information">{{this.name}}</h3>
+        <h4>$$: {{this.prices}}</h4>
+        <p class="description">{{this.description}}</p>
+        <p>Count : {{this.number}}</p>
+        <p>
+            <a href="/buy-now/{{this._id}}" class="btn btn-primary" role="button">Buy-now</a> 
+            <a href="/add-to-cart/{{this._id}}" class="btn btn-default" role="button">Add-to-cart</a>
+            <a href="/detail/{{this._id}}" class="btn btn-default" role="button">Detail</a>
+            <a href="/user/verify/{{this._id}}" class="btn btn-default" role="button">Verify</a>
+        </p>
+      </div>
+    </div>
+  </div>
+{{/each}}
+</div>

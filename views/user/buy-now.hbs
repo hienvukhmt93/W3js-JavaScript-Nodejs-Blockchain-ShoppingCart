@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Private Key</h1>
+        <h1 id="test"></h1>
+            <div >
+                    <p id="hashError"></p>
+            </div>
+       
+            <div class="form-group">
+                <label for="text">proDuctId</label>
+                <input type="text" readonly id="proDuctId"  name="proDuctId" value="{{proDuctId}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="text">Price</label>
+                <input type="text" readonly id="prices" name="prices" value="{{product.prices}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="text">Name</label>
+                <input type="text" readonly id="name" name="name" value="{{product.name}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="text">Total number</label>
+                <input type="text" readonly id="totalNumber" name="totalNumber" value="{{product.number}}" class="form-control">
+                <input type="hidden" name="description" id="description" value="{{product.description}}">
+                <input type="hidden" name="description" id="hashCode"  value="{{product.hashCode}}">
+            </div>
+            <div class="form-group">
+                <label for="text">Number</label>
+                <input type="text" id="number" name="number" value="1"  class="form-control">
+                <p id="errorNumber"></p>
+            </div>
+            <div class="form-group">
+                <label for="text">From</label>
+                <input type="text" readonly id="address" name="address" value="{{product.address}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Private Key</label>
+                <input type="password" id="privateKey" name="privateKey" class="form-control">
+                <p id="errorPrivateKey"></p>
+            </div>
+            <button type="button" onclick="myFunction();"  >Buy</button>
+    </div>
+</div>
+
+<script src="/javascripts/buy-now.js"></script>

@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://ipfs.io/ipfs/{{product.hashCode}}" alt="Not Found">
+      <div class="caption">
+        <h3 class="information">{{product.name}}</h3>
+        <h4>$$: {{product.prices}}</h4>
+        <p class="description">{{product.description}}</p>
+        <p>Detail: {{product.detail}}</p>
+        <p>Count : {{product.number}}</p>
+        <input type="hidden" value="{{this.address}}" id="address" name="address">
+        {{!-- <input type="text" name="numberBuy" id="numberBuy"> --}}
+        <p>
+            <a href="/buy-now/{{product._id}}" class="btn btn-primary" role="button">Buy-now</a> 
+            <a href="/add-to-cart/{{product._id}}" class="btn btn-default" role="button">Add-to-cart</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="alert alert-danger">
+    <p id="hashError"></p>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://ipfs.io/ipfs/{{product.hashCode}}" alt="Not Found">
+      <div class="caption">
+        <h3 class="information">{{product.name}}</h3>
+        <h4>$$: {{product.prices}}</h4>
+        Description<p class="description">{{product.description}}</p>
+        <p>Count : {{product.number}}</p>
+        From :<p id="address">{{product.address}}</p> 
+        <div class="form-group">
+            <label for="email">Hash</label>
+            <input type="text" name="hash" id="hash" value="{{sign.hashMessage}}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">V</label>
+            <input type="text" name="v" id="v" value="{{sign.v}}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">R</label>
+            <input type="text" name="r" id="r" value="{{sign.r}}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">S</label>
+            <input type="text" name="s" id="s" value="{{sign.s}}">
+        </div>
+        <p>
+            <button type="button" onclick="verify();">Verify</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/verify.js"></script>

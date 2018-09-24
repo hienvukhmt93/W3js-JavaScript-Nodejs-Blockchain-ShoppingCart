@@ -1,0 +1,42 @@
+{{#if data}}
+            <div >
+                    <p id="hashError"></p>
+            </div>
+     <table id="myTable" class="table table-bordered" style="width: 30%" >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Account</th>
+        <th>Amount</th>
+        <th>From</th>
+        <th>Transaction</th>
+        <th>Action</th>
+        <th>Private Key</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {{#each data}}
+        <tr> 
+            <td id="_id{{@index}}">{{this._id}}</td>
+            <td id="email{{@index}}">{{this.email}}</td>
+            <td id="amount{{@index}}">{{this.amount}}</td>
+            <td id="from{{@index}}">{{this.from}}</td>
+            <td id="transactionHash{{@index}}">{{this.transactionHash}}</td>
+            <td><button type="button" onclick="approve('{{this.email}}', '{{this.amount}}', '{{@index}}');" >Approve</button></td>
+            <td>
+                <div class="form-group">
+                  <input type="password" name="privateKey" id="privateKey{{@index}}">
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+    <div class="container">
+      <h1>No Items Approve</h1>
+    </div>
+{{/if}}
+<script src="/javascripts/set-balances-admin.js"></script>

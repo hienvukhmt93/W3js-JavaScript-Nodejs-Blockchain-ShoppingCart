@@ -1,0 +1,49 @@
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages}}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <form action="/user/admin-uploadfile" method="POST" enctype="multipart/form-data"> 
+            <div class="form-group">
+                <label for="email">File </label>
+                <input type="file" name="filename" id="filename">
+            </div> 
+        <div class="caption">
+                <div class="form-group">
+                    <label for="text">Name</label>
+                    <input type="text" id="name" name="name" >
+                </div>
+        <div class="form-group">
+            <label for="text">Prices</label>
+            <input type="text" id="prices" name="prices" >
+        </div>
+        <div class="form-group">
+            <label for="text">Description</label>
+            <input type="text" id="description" name="description" >
+        </div>
+
+        <div class="form-group">
+            <label for="text">Total Number</label>
+            <input type="text" id="number" name="number" >
+        </div>
+        <div class="form-group">
+            <label for="text">Detail</label>
+            <input type="text"  id="detail" name="detail" >
+        </div>
+        <div class="form-group">
+            <label for="text">Private key</label>
+            <input type="password"  id="privateKey" name="privateKey" >
+        </div>
+        <button type="submit">Add</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

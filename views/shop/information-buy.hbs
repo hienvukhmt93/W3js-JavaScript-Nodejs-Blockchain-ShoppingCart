@@ -1,0 +1,35 @@
+{{#if data}}
+      <div class="container">
+      <h1>List buy</h1>
+    </div>
+ <table id="myTable" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Prices</th>
+        <th>Number</th>
+        <th>Description</th>
+        <th>IMG</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {{#each data}}
+        <tr>      
+            <td id="_id{{@index}}">{{this.id}}</td>
+            <td id="name{{@index}}">{{this.name}}</td>
+            <td id="prices{{@index}}">{{this.prices}}</td>
+            <td id="totalNumber{{@index}}">{{this.number}}</td>
+            <td id="description{{@index}}">{{this.description}}</td>
+            <td id="img{{@index}}"><img height="50" width="50" src="https://ipfs.io/ipfs/{{this.hashCode}}" alt="Not Found"></td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+  </table>
+{{else}}
+  <div class="container">
+    <h1>No Items</h1>
+  </div>
+{{/if}}
